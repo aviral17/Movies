@@ -1,0 +1,334 @@
+@import "../../mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+/* font span */
+// @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+/* ------------------------ */
+// @import url("https://fonts.googleapis.com/css2?family=Foldit&display=swap");
+
+//  When we use .top inside .header, it will create a CSS rule that looks like this:
+
+// .header .top {
+//   /* styles */
+// }
+
+// However, when we use &.top inside .header, it will create a CSS rule that looks like this:
+
+// .header.top {
+//   /* styles */
+// }
+
+// The difference is that the first rule targets an element with class top that is a descendant of an element with class header, while the second rule targets an element with both classes header and top.
+
+// So, if we use .top inside .header, it will only target elements with class top that are inside elements with class header. But if we use &.top inside .header, it will target elements that have both classes header and top.
+
+// In some cases, we may want to target elements that have both classes, rather than just elements that are descendants of an element with a particular class. That's when we would use &.top instead of just .top inside .header.
+
+// using top, show and hide so when we scroll show and hide navigation bar will work, else by default we have `top` class where image behind navigation bar also become somewhat blur
+
+.header {
+  position: fixed;
+  transform: translateY(0);
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  transition: all ease 0.5s;
+  z-index: 2;
+  &.top {
+    // .header.top
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px); // for support to all browsers
+  }
+  &.show {
+    background-color: var(--black3);
+  }
+  &.hide {
+    transform: translateY(-60px);
+  }
+
+  .contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    cursor: pointer;
+    img {
+      height: 70px;
+      // filter: drop-shadow(2px 2px 2px rgb(10, 27, 180));
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.096));
+    }
+  }
+  .menuItems {
+    list-style-type: none;
+    display: none;
+    align-items: center;
+    @include md {
+      display: flex;
+    }
+    .menuItem {
+      // height: 60px;
+      display: flex;
+      font-family: "Rubik", sans-serif;
+      align-items: center;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+      z-index: 9999px;
+      &.searchIcon {
+        margin-right: 0;
+      }
+      svg {
+        font-size: 18px;
+      }
+      cursor: pointer;
+      &:hover {
+        z-index: 10px;
+        // color: var(--pink);
+      }
+    }
+  }
+
+  .movie_logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    cursor: pointer;
+
+    .h1_movie {
+      display: flex;
+      // align-items: baseline; // This aligns .movie_h1 and .movie_x along their baselines
+    }
+
+    .movie_h1 {
+      font-size: 60px;
+      // color: #95100b; // rgb(183, 3, 3);
+      // color: var(--pink);
+      color: #b2102f;
+
+      // background-clip: text;
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      margin-left: 10%;
+      // font-family: "Oswald", sans-serif;
+      font-family: "Changa", sans-serif;
+      text-shadow: 2px 2px 2px rgb(46, 3, 114);
+
+      @media (max-width: 443px) {
+        margin-left: -5%;
+        font-size: 40px;
+      }
+    }
+    .movie_x {
+      // position: absolute;
+      // top: -5%;
+      // left: 32%;
+      font-size: 70px;
+      // font-family: "Nunito", sans-serif;
+      // font-family: "Wallpoet", cursive;
+      font-family: "Barriecito", cursive;
+      color: white !important;
+
+      @media (max-width: 443px) {
+        top: 8px;
+        left: 120px;
+        font-size: 45px;
+      }
+
+      @media (min-width: 444px) {
+        top: -5px;
+        left: 190px;
+        // font-size: 45px;
+      }
+
+      // @media (min-width: 1198px) {
+      //   top: -5px;
+      //   left: 190px;
+      //   // font-size: 45px;
+      // }
+    }
+  }
+
+  .movie {
+    // position: relative; already using it in menuItem
+    // border-radius: 5px;
+    height: 40px;
+    padding: 0px 10px;
+    // z-index: 1;
+    color: var(--pink);
+    // border: 2px solid black;
+    transition: all 0.2s ease-in-out 0.01s;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      border-radius: inherit;
+      // background-color: rgba(195, 33, 21, 0.801);
+      transition: transform 0.5s;
+      z-index: -1;
+      clip-path: inset(2px);
+    }
+
+    &:hover {
+      // color: white;
+      color: yellow;
+      transform: scale(1.2);
+      &::before {
+        z-index: -1;
+        border-radius: 15px;
+        background-color: #10072dec;
+        // background-color: #15525d4f;
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  .tv {
+    height: 40px;
+    padding: 0px 10px;
+    color: var(--pink);
+    transition: all 0.2s ease-in-out 0.01s;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      // border-radius: inherit;
+      transition: transform 0.5s;
+      z-index: -1;
+      clip-path: inset(2px);
+    }
+
+    &:hover {
+      // color: white;
+      transform: scale(1.2);
+      color: yellow;
+      &::before {
+        z-index: -1;
+        border-radius: 15px;
+        // border-radius: 100rem;
+        background-color: #10072dec;
+        // background-color: #694ec0;
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  .search_icon {
+    color: var(--pink);
+    // filter: drop-shadow(2px 2px 2px rgb(187, 44, 85));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.281));
+    transition: all 0.2s ease-in-out 0.01s;
+    &:hover {
+      scale: 1.7;
+    }
+  }
+
+  .mobileMenuItems {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include md {
+      display: none;
+    }
+    svg {
+      font-size: 18px;
+      color: white;
+    }
+  }
+
+  &.mobileView {
+    background: var(--black3);
+    .menuItems {
+      display: flex;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: var(--black3);
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: mobileMenu 0.3s ease forwards;
+      .menuItem {
+        font-size: 20px;
+        width: 100%;
+        height: auto;
+        padding: 15px 20px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .searchBar {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    animation: mobileMenu 0.3s ease forwards;
+    .searchInput {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin-top: 10px;
+      width: 100%;
+      svg {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        outline: 0;
+        border: 0;
+        border-radius: 30px 0 0 30px;
+        padding: 0 15px;
+        font-size: 14px;
+        @include md {
+          height: 60px;
+          font-size: 20px;
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
+.movie_x1 {
+  margin-top: -3px;
+}
+
+@keyframes mobileMenu {
+  0% {
+    transform: translateY(-130%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

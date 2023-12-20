@@ -1,0 +1,21 @@
+A) npm create vite@latest  ---> react ---> javascript
+
+B) install @reduxjs/toolkit  axios  dayjs react-circular-progressbar react-icons  react-infinite-scroll-component react-lazy-load-image-component  react-player react-redux  react-select sass
+
+C) Change href of link inside index.html   with /movie-logo.png, Its the image of app title
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+For MOVIE  API
+
+a) search `tmdb` on google,  link ---> https://www.themoviedb.org/
+
+b) create account and give website link same as localhost/....
+
+c) Under settings, do some settings  and then check API,  create new API and fill in the info with URL same as our localhost
+
+d) Copy API Read access token to .env
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// We can simply use <img /> tag if Image loading takes time with <Img /> lazyloading
