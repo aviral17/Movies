@@ -71,6 +71,7 @@ function App() {
     setIsLoading(false);
   };
 
+  // add more providers
   useEffect(() => {
     if (!authLoading && !isAuthenticated) {
       loginWithRedirect();
