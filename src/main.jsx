@@ -9,6 +9,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { store } from "./store/store.js";
 import { Provider } from "react-redux";
 
+// update redux toolkit as per requirements 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
     domain="dev-usl231fyx5bdqyzk.us.auth0.com"
