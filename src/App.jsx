@@ -82,6 +82,7 @@ function App() {
     return <Loader />;
   }
 
+  // update it as per latest changes
   return isAuthenticated ? ( // use a ternary operator
     <Router>
       <Header />
