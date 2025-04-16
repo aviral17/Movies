@@ -11,6 +11,7 @@ import { Home, Details, SearchResult, Explore, PageNotFound } from "./pages";
 import Loader from "./components/loader/Loader";
 import { useAuth0 } from "@auth0/auth0-react";
 
+// updated it as per latest changes
 function App() {
   const {
     user,
