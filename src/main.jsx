@@ -1,7 +1,5 @@
 // modify the architecture
 
-// update it as per latest changes
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
