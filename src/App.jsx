@@ -1,5 +1,3 @@
-// update it as per latest changes
-
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
