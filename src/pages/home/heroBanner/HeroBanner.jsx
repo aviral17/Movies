@@ -1,5 +1,3 @@
-// update it as per latest changes
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
