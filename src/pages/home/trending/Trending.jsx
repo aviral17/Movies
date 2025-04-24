@@ -1,3 +1,5 @@
+// update it as per latest changes
+
 import React, { useState } from "react";
 import { ContentWrapper } from "../../../components";
 import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
