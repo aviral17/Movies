@@ -51,6 +51,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     container.scrollTo({ left: scrollAmount, behavior: "smooth" }); // JS DOM properties
   };
 
+  // updated as per latest changes
   const skItem = () => {
     // skeleton className is for animation defined in style.scss
     return (
