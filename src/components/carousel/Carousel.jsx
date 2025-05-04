@@ -22,6 +22,7 @@ import "./style.scss";
 // So without this as reqd. by API, when we switch between Movies and TV tab, it won't work
 // title  from 'Similar.jsx' and 'Racommendation.jsx'
 
+// updated as per latest changes
 const Carousel = ({ data, loading, endpoint, title }) => {
   const rateConversion = (n) => {
     if (n > 0 && n < 10) {
