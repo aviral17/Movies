@@ -23,6 +23,7 @@ const CircleRating = ({ rating }) => {
     return () => clearInterval(timer);
   }, [rating]);
 
+  // updated as per latest changes
   return (
     <div className="circleRating">
       <CircularProgressbar
