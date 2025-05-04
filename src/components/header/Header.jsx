@@ -14,6 +14,7 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 // import logo from "../../assets/movie-logo.svg";
 import logo from "../../../public/movie-logo14.png";
 
+// updated as per latest changes
 const Header = () => {
   const [show, setShow] = useState("top"); // "top" is a scss className
   const [lastScrollY, setLastScrollY] = useState(0);
