@@ -33,6 +33,7 @@ const Header = () => {
     smoothScrollTo(0, 200); // 2nd arg. here is timing in ms duration as per our function
   }, [location]);
 
+  // updated as per latest changes
   const controlNavbar = () => {
     // console.log(window.scrollY);
     if (window.scrollY > 200) {
