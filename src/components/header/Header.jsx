@@ -85,6 +85,7 @@ const Header = () => {
     setMobileMenu(false);
   };
 
+  // updated as per latest changes
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
